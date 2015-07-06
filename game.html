@@ -1,0 +1,31 @@
+<script>
+
+//brought to you by Caldwell Cottage Industries of Vashon Island ...
+
+//define variables
+var guess;
+var answer;
+
+//create a random number and add it to the answer variable
+answer = Math.floor(Math.random() * 99) + 1;
+console.log("The answer is " + answer);
+
+//prompt the user to posit a guess and store that answer in the guess variable
+guess = prompt("Guess a number between 1 and 100 ");
+console.log("The guess is " + guess);
+
+//analyze the answer and guess variables and prompt the user to either guess higher or lower
+while(guess !== answer) {
+  if (guess > answer) {
+    alert("You guessed too high!  Guess again!")
+    guess = prompt("Guess again!")
+  } else if (guess < answer) {
+    alert("you guessed too low!  Guess again!")
+    guess = prompt("Guess again!")
+  } else {
+    alert("You got it!");
+    break;
+  }
+}
+
+</script>
