@@ -1,41 +1,47 @@
 <script>
-//brought to you by Caldwell Cottage Industries of Vashon Island ...
-//define variables
-var guess;
-var answer;
 
-// wrong means the guess is wrong...
-var wrong = true;
+var Game = function() {
+  this.count = 0;
+  this.makeGuess = function(){
+    this.input = prompt("Guess a number between 1 and 100.");
+    this.count++;
+  }
+  this.answer = Math.floor(Math.random() * 99) + 1;
+  this.wrong = true;
 
-//starts the counter
-var count = 1;
+  this.play = function(){
 
-//create a random number and add it to the answer variable
-answer = Math.floor(Math.random() * 99) + 1;
-console.log("The answer is " + answer);
+    while(this.wrong){
 
-//prompt the user to posit a guess and store that answer in the guess variable
-guess = prompt("Guess a number between 1 and 100.");
-console.log("The guess is " + guess);
-
-while (wrong){
-  if (count <=6){
-    if (guess > answer) {
-    alert("You guessed too high!")
-    count ++
-    guess = prompt("Guess again! You are on " + count + " of 7 tries.")
+      if(this.count <= 6){
+        if(this.count === 0){
+          this.makeGuess();
+        }
+        if (this.input > this.answer) {
+          alert("You guessed too high!");
+          this.count++;
+          this.input = prompt("Guess again! You are on " + this.count + " of 7 tries.");
+        }
+        if (this.input < this.answer) {
+          alert("you guessed too low!");
+          this.count++;
+          this.input = prompt("Guess again! You are on " + this.count + " of 7 tries.");
+        }
+        if(this.input === this.answer.toString()){
+          alert("You got it!!! The number was " + this.answer + "!");
+          this.wrong = false;
+        }
+      } else {
+          alert("YOU RAN OUT OF TRIES! THE CORRECT NUMBER WAS " + this.answer);
+          this.wrong = false;
+      }
     }
-    if (guess < answer) {
-      alert("you guessed too low!")
-      count ++
-      guess = prompt("Guess again! You are on " + count + " of 7 tries.")
-    }
-    if (guess == answer){
-      alert("You got it!!! The number was " + answer + "!")
-      wrong = false    }
-  } else {
-      alert("YOU RAN OUT OF TRIES! THE CORRECT NUMBER WAS " + answer)
-      wrong = false
-    }
+
+  }
 }
+
+var game = new Game();
+game.play();
+
 </script>
+
