@@ -1,47 +1,80 @@
-<script>
+<!DOCTYPE HTML>
+<html>
 
-var Game = function() {
-  this.count = 0;
-  this.makeGuess = function(){
-    this.input = prompt("Guess a number between 1 and 100.");
-    this.count++;
-  }
-  this.answer = Math.floor(Math.random() * 99) + 1;
-  this.wrong = true;
+  <head>
+    <meta charset="utl-8">
+    <title>
+      Spencer's Number Guessing Game!!!
+    </title>
+    <link rel="stylesheet" href="css/main.css">
+  </head>
 
-  this.play = function(){
+  <body>
+    <h2>Guessing Game</h2>
+    <p> This is my game </p>
+    <h3> Instructions: First, guess a number between 1 and 100.  The computer will tell you if you guessed too high or too low.  You then will be prompted for another guess.  Keep guessing what you think the number is, but be careful.  You only have 7 guesses before the game ends!
+    </h3>
+    <h4>These are you guesses so far.</h4>
+      <ul>
+        <li> Guess 1 = </li>
+        <li> Guess 2 = </li>
+        <li> Guess 3 = </li>
+        <li> Guess 4 = </li>
+        <li> Guess 5 = </li>
+        <li> Guess 6 = </li>
+        <li> Guess 7 = </li>
+      </ul>
 
-    while(this.wrong){
+    <img src="http://cdn.meme.am/instances/500x/11989123.jpg">
+    <p> The meow game is never over! </p>
 
-      if(this.count <= 6){
-        if(this.count === 0){
-          this.makeGuess();
+    <script>
+
+    var Game = function() {
+      this.count = 0;
+      this.makeGuess = function(){
+        this.input = prompt("Guess a number between 1 and 100.");
+        this.count++;
+      }
+      this.answer = Math.floor(Math.random() * 99) + 1;
+      this.wrong = true;
+
+      this.play = function(){
+
+        while(this.wrong){
+
+          if(this.count <= 6){
+            if(this.count === 0){
+              this.makeGuess();
+            }
+            if (this.input > this.answer) {
+              alert("You guessed too high!");
+              this.count++;
+              this.input = prompt("Guess again! You are on " + this.count + " of 7 tries.");
+            }
+            if (this.input < this.answer) {
+              alert("you guessed too low!");
+              this.count++;
+              this.input = prompt("Guess again! You are on " + this.count + " of 7 tries.");
+            }
+            if(this.input === this.answer.toString()){
+              alert("You got it!!! The number was " + this.answer + "!");
+              this.wrong = false;
+            }
+          } else {
+              alert("YOU RAN OUT OF TRIES! THE CORRECT NUMBER WAS " + this.answer);
+              this.wrong = false;
+          }
         }
-        if (this.input > this.answer) {
-          alert("You guessed too high!");
-          this.count++;
-          this.input = prompt("Guess again! You are on " + this.count + " of 7 tries.");
-        }
-        if (this.input < this.answer) {
-          alert("you guessed too low!");
-          this.count++;
-          this.input = prompt("Guess again! You are on " + this.count + " of 7 tries.");
-        }
-        if(this.input === this.answer.toString()){
-          alert("You got it!!! The number was " + this.answer + "!");
-          this.wrong = false;
-        }
-      } else {
-          alert("YOU RAN OUT OF TRIES! THE CORRECT NUMBER WAS " + this.answer);
-          this.wrong = false;
+
       }
     }
 
-  }
-}
+    var game = new Game();
+    game.play();
 
-var game = new Game();
-game.play();
+    </script>
+  </body>
+</html>
 
-</script>
 
