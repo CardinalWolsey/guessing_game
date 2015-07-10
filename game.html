@@ -16,13 +16,13 @@
     </h3>
     <h4>These are you guesses so far.</h4>
       <ul>
-        <li> Guess 1 = </li>
-        <li> Guess 2 = </li>
-        <li> Guess 3 = </li>
-        <li> Guess 4 = </li>
-        <li> Guess 5 = </li>
-        <li> Guess 6 = </li>
-        <li> Guess 7 = </li>
+        <li> Guess 1 = <!-- [This will equal the value of guess 1] --></li>
+        <li> Guess 2 = <!-- [This will equal the value of guess 2] --></li>
+        <li> Guess 3 = <!-- [This will equal the value of guess 3] --></li>
+        <li> Guess 4 = <!-- [This will equal the value of guess 4] --></li>
+        <li> Guess 5 = <!-- [This will equal the value of guess 5] --></li>
+        <li> Guess 6 = <!-- [This will equal the value of guess 6] --></li>
+        <li> Guess 7 = <!-- [This will equal the value of guess 7] --></li>
       </ul>
 
     <img src="http://cdn.meme.am/instances/500x/11989123.jpg">
@@ -30,48 +30,7 @@
 
     <script>
 
-    var Game = function() {
-      this.count = 0;
-      this.makeGuess = function(){
-        this.input = prompt("Guess a number between 1 and 100.");
-        this.count++;
-      }
-      this.answer = Math.floor(Math.random() * 99) + 1;
-      this.wrong = true;
 
-      this.play = function(){
-
-        while(this.wrong){
-
-          if(this.count <= 6){
-            if(this.count === 0){
-              this.makeGuess();
-            }
-            if (this.input > this.answer) {
-              alert("You guessed too high!");
-              this.count++;
-              this.input = prompt("Guess again! You are on " + this.count + " of 7 tries.");
-            }
-            if (this.input < this.answer) {
-              alert("you guessed too low!");
-              this.count++;
-              this.input = prompt("Guess again! You are on " + this.count + " of 7 tries.");
-            }
-            if(this.input === this.answer.toString()){
-              alert("You got it!!! The number was " + this.answer + "!");
-              this.wrong = false;
-            }
-          } else {
-              alert("YOU RAN OUT OF TRIES! THE CORRECT NUMBER WAS " + this.answer);
-              this.wrong = false;
-          }
-        }
-
-      }
-    }
-
-    var game = new Game();
-    game.play();
 
     </script>
   </body>
