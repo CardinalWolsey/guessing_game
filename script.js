@@ -1,0 +1,42 @@
+var Game = function() {
+  this.count = 0;
+  this.makeGuess = function(){
+    this.input = prompt("Guess a number between 1 and 100.");
+    this.count++;
+  }
+  this.answer = Math.floor(Math.random() * 99) + 1;
+  this.wrong = true;
+
+  this.play = function(){
+
+    while(this.wrong){
+
+      if(this.count <= 6){
+        if(this.count === 0){
+          this.makeGuess();
+        }
+        if (this.input > this.answer) {
+          alert("You guessed too high!");
+          this.count++;
+          this.input = prompt("Guess again! You are on " + this.count + " of 7 tries.");
+        }
+        if (this.input < this.answer) {
+          alert("you guessed too low!");
+          this.count++;
+          this.input = prompt("Guess again! You are on " + this.count + " of 7 tries.");
+        }
+        if(this.input === this.answer.toString()){
+          alert("You got it!!! The number was " + this.answer + "!");
+          this.wrong = false;
+        }
+      } else {
+          alert("YOU RAN OUT OF TRIES! THE CORRECT NUMBER WAS " + this.answer);
+          this.wrong = false;
+      }
+    }
+
+  }
+}
+
+var game = new Game();
+game.play();
