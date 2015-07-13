@@ -2,7 +2,7 @@
 <html>
 
   <head>
-    <meta charset="utl-8">
+    <meta charset="utl-8"> <!-- I'm not sure what this does. -->
     <title>
       Spencer's Number Guessing Game!!!
     </title>
@@ -10,29 +10,45 @@
   </head>
 
   <body>
-    <h2>Guessing Game</h2>
-    <p> This is my game </p>
-    <h3> Instructions: First, guess a number between 1 and 100.  The computer will tell you if you guessed too high or too low.  You then will be prompted for another guess.  Keep guessing what you think the number is, but be careful.  You only have 7 guesses before the game ends!
-    </h3>
-    <h4>These are you guesses so far.</h4>
-      <ul>
-        <li> Guess 1 = <!-- [This will equal the value of guess 1] --></li>
-        <li> Guess 2 = <!-- [This will equal the value of guess 2] --></li>
-        <li> Guess 3 = <!-- [This will equal the value of guess 3] --></li>
-        <li> Guess 4 = <!-- [This will equal the value of guess 4] --></li>
-        <li> Guess 5 = <!-- [This will equal the value of guess 5] --></li>
-        <li> Guess 6 = <!-- [This will equal the value of guess 6] --></li>
-        <li> Guess 7 = <!-- [This will equal the value of guess 7] --></li>
-      </ul>
+    <h1>Guessing Game</h1>
+
+    <p> <b>Instructions:</b> First, guess a number between 1 and 100.  The computer will tell you if you guessed too high or too low.  You then will be prompted for another guess.  Keep guessing what you think the number is, but be careful.  You only have 7 guesses before the game ends!
+    </p>
+    <p><br>
+      Guess a number between 1 and 100.
+    </p>
+
+    <div class="left">
+      <p><b>These are you guesses so far:</b></p>
+        <ul>
+          <li> Guess 1 = <div class="userGuess" id="guess">???</div></li>
+          <li> Guess 2 = <div class="userGuess" id="guess">???</div></li>
+          <li> Guess 3 = <div class="userGuess" id="guess">???</div></li>
+          <li> Guess 4 = <div class="userGuess" id="guess">???</div></li>
+          <li> Guess 5 = <div class="userGuess" id="guess">???</div></li>
+          <li> Guess 6 = <div class="userGuess" id="guess">???</div></li>
+          <li> Guess 7 = <div class="userGuess" id="guess">???</div></li>
+        </ul>
+    </div>
+
+    <div class="right">
+      <ol>
+        <p><b>Results:</b></p>
+        <li class="userResult" id="result"></li>
+        <li class="userResult" id="result"></li>
+        <li class="userResult" id="result"></li>
+        <li class="userResult" id="result"></li>
+        <li class="userResult" id="result"></li>
+        <li class="userResult" id="result"></li>
+        <li class="userResult" id="result"></li>
+      </ol>
+    </div>
 
     <img src="http://cdn.meme.am/instances/500x/11989123.jpg">
     <p> The meow game is never over! </p>
 
-    <script>
+    <script src="script.js"></script>
 
-
-
-    </script>
   </body>
 </html>
 
